@@ -1,0 +1,34 @@
+# This is Git's per-user configuration file.
+
+[user]
+	name = ray-vazquez
+	email = herschel.rey@gmail.com
+
+
+[alias]
+	# Git status
+	st = status
+    
+	# Pretty graph
+	graph = log --graph --pretty=format:'%C(yellow)%d%Creset %C(cyan)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
+	
+	# Show all aliases
+	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+	
+	# Show all branches
+	br = branch -av
+
+
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = cyan reverse
+    local = yellow
+    remote = green
+
+[color "status"]
+  	added = yellow
+    changed = green
+    untracked = red
